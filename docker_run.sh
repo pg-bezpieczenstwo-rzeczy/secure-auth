@@ -2,7 +2,7 @@
 #/bin/bash
 
 
-ROCKET_PORT=8081 ./src/sinvis &
+ROCKET_ADDRESS=127.0.0.1 ROCKET_PORT=8081 ./src/sinvis &
 SINVIS_PID=$!
 echo $SINVIS_PID
 
@@ -14,6 +14,7 @@ java -jar ./src/WhoAsked-0.0.1-SNAPSHOT.jar &
 WHOASKED_PID=$!
 echo $WHOASKED_PID
 
-ROCKET_PORT=8080 ./src/server
+
+ROCKET_ADDRESS=127.0.0.1 ROCKET_PORT=8080 ./src/server
 TM_PID=$!
 echo $TM_PID
